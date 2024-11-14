@@ -19,8 +19,10 @@ int main() {
     }
 
     while (!tollQueue.empty()){
-        if (){
+        int operation = rand() % 100 + 1;
 
+        if (operation <= 55){
+            cout << "Time"
         } else {
 
         }
@@ -28,7 +30,7 @@ int main() {
         if(){
 
         }else{
-            
+
         }
     }
 }
