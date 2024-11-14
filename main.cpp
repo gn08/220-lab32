@@ -15,6 +15,20 @@ int main() {
 
     cout << "Initial queue: ";
     for (const Car& car: toll_que){
-        
+        car.print();
+    }
+
+    while (!tollQueue.empty()){
+        if (){
+
+        } else {
+
+        }
+
+        if(){
+
+        }else{
+            
+        }
     }
 }
