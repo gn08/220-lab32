@@ -1,35 +1,39 @@
 #include <iostream>
 #include <cstdlib>
 #include "Car.h"
+#include <deque>
+#include <ctime>
 
 using namespace std;
+const int INITIAL_SIZE = 2;
 
 int main() {
     srand(time(0));
     int time = 1;
 
-    deque<Cae> toll_queue;
-    for (int i=0; i< initial_size; ++i){
-        toll.Queue.push_back();
+    deque<Car> toll_queue;
+    for (int i=0; i< INITIAL_SIZE; ++i){
+        toll_queue.push_back(Car());
     }
 
     cout << "Initial queue: ";
-    for (const Car& car: toll_que){
+    for (const Car& car: toll_queue){
         car.print();
     }
+    cout << endl;
 
     while (!tollQueue.empty()){
         int operation = rand() % 100 + 1;
 
         if (operation <= 55){
             cout << "Time" << time << "Operation: Car paid: ";
-            tollQueue.front().print();
-            tollQueue.pop_front();
+            toll_queue.front().print();
+            toll_queue.pop_front();
         } else {
             Car new_car;
             cout << "Time" << time << "Operation: Joined lane: ";
             new_car.print();
-            tollQueue.push_back(new_car);
+            toll_queue.push_back(new_car);
         }
 
         cout << "Queue: " << endl;
@@ -40,6 +44,8 @@ int main() {
             car.print()
         }
         cout << endl;
+
+        ++time;
     }
     return 0;
 }
