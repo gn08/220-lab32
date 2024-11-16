@@ -32,8 +32,10 @@ int main() {
             tollQueue.push_back(new_car);
         }
 
-        if(){
+        cout << "Queue: " << endl;
 
+        if(tollQueue.empty()){
+            cout << "   Empty" << endl;
         }else{
 
         }
