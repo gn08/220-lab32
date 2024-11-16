@@ -37,7 +37,9 @@ int main() {
         if(tollQueue.empty()){
             cout << "   Empty" << endl;
         }else{
-
+            car.print()
         }
+        cout << endl;
     }
+    return 0;
 }
