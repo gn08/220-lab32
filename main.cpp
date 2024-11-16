@@ -22,9 +22,14 @@ int main() {
         int operation = rand() % 100 + 1;
 
         if (operation <= 55){
-            cout << "Time"
+            cout << "Time" << time << "Operation: Car paid: ";
+            tollQueue.front().print();
+            tollQueue.pop_front();
         } else {
-
+            Car new_car;
+            cout << "Time" << time << "Operation: Joined lane: ";
+            new_car.print();
+            tollQueue.push_back(new_car);
         }
 
         if(){
