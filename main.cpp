@@ -22,7 +22,7 @@ int main() {
     }
     cout << endl;
 
-    while (!tollQueue.empty()){
+    while (!toll_queue.empty()){
         int operation = rand() % 100 + 1;
 
         if (operation <= 55){
