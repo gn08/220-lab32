@@ -72,7 +72,7 @@ int main() {
         cout << endl;
     }
 
-    for (int time =1; time <= SIMULATION_TIMES; time ++){
+    for (int time = 1; time <= SIMULATION_TIMES; time ++){
         cout << "Time: " << time << endl;
         for (int lane = 0; lane < NUM_LANES; lane++){
             if(!lanes[lane].empty()){
@@ -81,7 +81,6 @@ int main() {
                 if (rand_val < PROB_PAY){
                     Car car = lanes[lane].front();
                     lanes[lane].pop_front();
-
                     cout << "Lane " << lane + 1 << " Paid: [" << car << "]" << endl;
                 } else if(rand_val < PROB_PAY + PROB_JOIN){
                     Car new_car("CarMake" + to_string(rand() % 100), 1990 + rand() % 34, rand() % 10000);
