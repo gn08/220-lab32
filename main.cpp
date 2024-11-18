@@ -6,6 +6,9 @@
 
 using namespace std;
 const int INITIAL_SIZE = 2;
+
+const int NUM_LANES = 4;
+const int MAX_INITIAL = 2;
 //does_foo() set the toll que with amount of cars
 //return integer
 int main() {
