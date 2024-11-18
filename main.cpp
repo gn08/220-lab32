@@ -12,10 +12,22 @@ const int MAX_INITIAL = 2;
 const double PROB_PAY = 0.46;
 const double PROB_JOIN = 0.39;
 const double PROB_SWITCH = 0.15;
+const int SIMULATION_TIMES = 20;
 deque<Car> lanes[NUM_LANES];
 
 //does_foo() set the toll que with amount of cars
 //return integer
+
+class Car{
+private:
+    string make;
+    int year;
+    int id;
+
+public:
+    Car(string m = "Default", int y = 2000, int i = 0) : make(m), year(y), id(i) {}
+    
+}
 
 void initialize_lanes(deque<Car< lanes[], int num_lanes){
     for (int i = 0; i < num_lanes; i ++){
