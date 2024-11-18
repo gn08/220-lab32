@@ -26,6 +26,10 @@ void initialize_lanes(deque<Car< lanes[], int num_lanes){
 void switch_lane(){
     if (lanes[current_lane].size() > 1){
         int new_lane;
+        do{
+            new_lane = rand() % NUM_LANES;
+        } while (new_lane == current_lane);
+        cout << "Lane" << current_lane + 1 << " Switched: [" << car_to_move << "] to Lane " << new_lane + 1 << endl;
     }
 }
 
