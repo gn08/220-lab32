@@ -11,6 +11,15 @@ const int NUM_LANES = 4;
 const int MAX_INITIAL = 2;
 //does_foo() set the toll que with amount of cars
 //return integer
+
+void initialize_lanes(){
+
+}
+
+void switch_lane(){
+
+}
+
 int main() {
     //random time
     srand(time(0));
