@@ -5,7 +5,6 @@
 #include <ctime>
 
 using namespace std;
-const int INITIAL_SIZE = 2;
 
 const int NUM_LANES = 4;
 const int MAX_INITIAL = 2;
@@ -32,13 +31,13 @@ public:
         return os;
     }
 
-}
+};
 
 void initialize_lanes(deque<Car< lanes[], int num_lanes){
     for (int i = 0; i < num_lanes; i ++){
         int num_cars = ran() % MAX_INITIAL + 1;
         for (int j = 0; j < num_cars; j++){
-            lanes[i].push_back(Car());
+            lanes[i].push_back(Car("CarMake" + to_string(rand() % 100), 1990 + rand() % 34, rand() % 10000));
         }
     }
 }
@@ -59,51 +58,24 @@ void switch_lane(){
 int main() {
     //random time
     srand(time(0));
-    //set variable
-    int time_step = 1;
     deque<Car> lanes[NUM_LANES];
     initialize_lanes(lanes, NUM_LANES);
 
     deque<Car> toll_queue;
-    for (int i=0; i< INITIAL_SIZE; ++i){
-        toll_queue.push_back(Car());
-    }
 //current que
     cout << "Initial queue: ";
-    for (const Car& car: toll_queue){
-        car.print();
-    }
-    cout << endl;
-//toll booth for each time step
-    while (!toll_queue.empty()){
-        int operation = rand() % 100 + 1;
-// if less than or equal to 55 leave que
-        if (operation <= 55){
-            cout << "Time" << time_step << "Operation: Car paid: ";
-            toll_queue.front().print();
-            toll_queue.pop_front();
-        // new car joins
-        } else {
-            Car new_car;
-            cout << "Time" << time_step << "Operation: Joined lane: ";
-            new_car.print();
-            toll_queue.push_back(new_car);
-        }
 
-        cout << "Queue: " << endl;
-//print current state
-        if(toll_queue.empty()){
-            cout << "   Empty" << endl;
-        }else{
-            for (const Car& car: toll_queue){
-                car.print();
+    for (int lane = 0; lane < NUM_LANES; lane++){
+        cout << "Lane " << lane + 1 << " Queue: ";
+        if(lanes[lane].empty()){
+            cout << "empty";
+        } else {
+            for(const Car& car : lanes[lane]){
+                cout << "[" << car << "]";
             }
         }
         cout << endl;
-//increment time
-        ++time_step;
     }
-    return 0;
 
     for (int time =1; time <= SIMULATION_TIMES; time ++){
         cout << "Time: " << time << endl;
@@ -122,20 +94,13 @@ int main() {
                     Car new_car("CarMake" + to_string(rand() % 100), 1990 + rand() % 34, rand() % 10000);
                     lanes[lane].push_back (new_car);
                     cout << "Lane" << lane + 1 << " Joined: [" << new_car << "]" << endl;
+                } else if(rand_val < PROB_PAY + PROB_JOIN + PROB_SWITCH){
+                    switch_lane(lanes, lane);
                 }
             }
         }
     }
 
-    for (int lane = 0; lane < NUM_LANES; lane++){
-        cout << "Lane " << lane + 1 << " Queue: ";
-        if(lanes[lane].empty()){
-            cout << "empty";
-        } else {
-            for(const Car& car : lanes[lane]){
-                cout << "[" << car << "]";
-            }
-        }
-        cout << endl;
-    }
+    for (int lane = 0; lane< NUM)
+
 }
