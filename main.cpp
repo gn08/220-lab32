@@ -9,17 +9,24 @@ const int INITIAL_SIZE = 2;
 
 const int NUM_LANES = 4;
 const int MAX_INITIAL = 2;
+deque<Car> lanes[NUM_LANES];
+
 //does_foo() set the toll que with amount of cars
 //return integer
 
-void initialize_lanes(deque<Car< lanes[], int NUM_LANES){
+void initialize_lanes(deque<Car< lanes[], int num_lanes){
     for (int i = 0; i < num_lanes; i ++){
-        
+        int num_cars = ran() % MAX_INITIAL + 1;
+        for (int j = 0; j < num_cars; j++){
+            lanes[i].push_back(Car());
+        }
     }
 }
 
 void switch_lane(){
-
+    if (lanes[current_lane].size() > 1){
+        int new_lane;
+    }
 }
 
 int main() {
