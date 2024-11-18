@@ -49,6 +49,9 @@ void switch_lane(){
         do{
             new_lane = rand() % NUM_LANES;
         } while (new_lane == current_lane);
+        Car car_to_move = lanes[current_lane].back();
+        lanes[current_lane].pop_back();
+        lanes[new_lane].push_back(car_to_move);
         cout << "Lane" << current_lane + 1 << " Switched: [" << car_to_move << "] to Lane " << new_lane + 1 << endl;
     }
 }
@@ -58,6 +61,8 @@ int main() {
     srand(time(0));
     //set variable
     int time_step = 1;
+    deque<Car> lanes[NUM_LANES];
+    initialize_lanes(lanes, NUM_LANES);
 
     deque<Car> toll_queue;
     for (int i=0; i< INITIAL_SIZE; ++i){
