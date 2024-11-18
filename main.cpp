@@ -27,6 +27,11 @@ private:
 public:
     Car(string m = "Default", int y = 2000, int i = 0) : make(m), year(y), id(i) {}
     
+    friend ostream& operator<<(ostream& os, const Car& car) {
+        os << car.year << " " << car.make << " (" << car.id << ")";
+        return os;
+    }
+
 }
 
 void initialize_lanes(deque<Car< lanes[], int num_lanes){
