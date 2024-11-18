@@ -12,8 +12,10 @@ const int MAX_INITIAL = 2;
 //does_foo() set the toll que with amount of cars
 //return integer
 
-void initialize_lanes(){
-
+void initialize_lanes(deque<Car< lanes[], int NUM_LANES){
+    for (int i = 0; i < num_lanes; i ++){
+        
+    }
 }
 
 void switch_lane(){
