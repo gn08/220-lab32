@@ -9,6 +9,9 @@ const int INITIAL_SIZE = 2;
 
 const int NUM_LANES = 4;
 const int MAX_INITIAL = 2;
+const double PROB_PAY = 0.46;
+const double PROB_JOIN = 0.39;
+const double PROB_SWITCH = 0.15;
 deque<Car> lanes[NUM_LANES];
 
 //does_foo() set the toll que with amount of cars
