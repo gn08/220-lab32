@@ -104,4 +104,24 @@ int main() {
         ++time_step;
     }
     return 0;
+
+    for (int time =1; time <= SIMULATION_TIMES; time ++){
+        cout << "Time: " << time << endl;
+        for (int lane = 0; lance < NUM_LANES; lanes++){
+            if(!lanes[lane].empty()){
+                double rand_val= (double)rand() / RAND_MAX;
+
+                if (rand_val < PROB_PAY){
+                    Car car = lanes[lane].front();
+                    lanes[lane].pop_front();
+
+                    cout << "Lane " << lane + 1 << " Paid: [" << car << "]" << endl;
+                }
+
+                else if(rand_val < PROB_PAY + PROB_JOIN){
+                    
+                }
+            }
+        }
+    }
 }
